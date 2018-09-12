@@ -17,8 +17,9 @@ $this->registerModule(
     "growUp",              // Name
     "Force some upgrades", // Description
     "Franck Paul",         // Author
-    '0.1',                 // Version
-    array(
-        'type' => 'plugin' // Type
-    )
+    '0.2',                 // Version
+    [
+        'requires' => [['core', '2.13']], // Dependencies
+        'type'     => 'plugin'           // Type
+    ]
 );
