@@ -18,13 +18,13 @@ $this->registerModule(
     'growUp',              // Name
     'Force some upgrades', // Description
     'Franck Paul',         // Author
-    '0.2',                 // Version
+    '0.3',                 // Version
     [
-        'requires' => [['core', '2.13']], // Dependencies
+        'requires' => [['core', '2.23']], // Dependencies
         'type'     => 'plugin',           // Type
 
         'details'    => 'https://open-time.net/?q=growUp',       // Details URL
         'support'    => 'https://github.com/franck-paul/growUp', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/master/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/master/dcstore.xml',
     ]
 );

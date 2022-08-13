@@ -10,25 +10,26 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
+if (!defined('DC_CONTEXT_ADMIN')) {
+    return;
+}
 
-if (!defined('DC_CONTEXT_ADMIN')) {return;}
-
-$new_version = DC_VERSION; // $core->plugins->moduleInfo('growUp','version');
-$old_version = $core->getVersion('growUp');
+$new_version = DC_VERSION; // dcCore::app()->plugins->moduleInfo('growUp','version');
+$old_version = dcCore::app()->getVersion('growUp');
 
 if (version_compare($old_version, $new_version, '>=')) {
     return;
 }
 
-try
-{
+try {
     if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
-        dcUpgrade::growUp($core, $core->getVersion('core'));
-        $core->setVersion('growUp', $new_version);
+        dcUpgrade::growUp(dcCore::app(), dcCore::app()->getVersion('core'));
+        dcCore::app()->setVersion('growUp', $new_version);
 
         return true;
     }
 } catch (Exception $e) {
-    $core->error->add($e->getMessage());
+    dcCore::app()->error->add($e->getMessage());
 }
+
 return false;
