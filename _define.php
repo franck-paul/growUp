@@ -20,7 +20,7 @@ $this->registerModule(
     'Franck Paul',         // Author
     '0.3',                 // Version
     [
-        'requires' => [['core', '2.23']], // Dependencies
+        'requires' => [['core', '2.24']], // Dependencies
         'type'     => 'plugin',           // Type
 
         'details'    => 'https://open-time.net/?q=growUp',       // Details URL

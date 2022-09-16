@@ -23,7 +23,7 @@ if (version_compare($old_version, $new_version, '>=')) {
 
 try {
     if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
-        dcUpgrade::growUp(dcCore::app(), dcCore::app()->getVersion('core'));
+        dcUpgrade::growUp(dcCore::app()->getVersion('core'));
         dcCore::app()->setVersion('growUp', $new_version);
 
         return true;
