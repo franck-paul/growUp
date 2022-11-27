@@ -15,16 +15,16 @@ if (!defined('DC_RC_PATH')) {
 }
 
 $this->registerModule(
-    'growUp',              // Name
-    'Force some upgrades', // Description
-    'Franck Paul',         // Author
-    '0.3',                 // Version
+    'growUp',
+    'Force some upgrades',
+    'Franck Paul',
+    '1.0',
     [
-        'requires' => [['core', '2.24']], // Dependencies
-        'type'     => 'plugin',           // Type
+        'requires' => [['core', '2.24']],
+        'type'     => 'plugin',
 
-        'details'    => 'https://open-time.net/?q=growUp',       // Details URL
-        'support'    => 'https://github.com/franck-paul/growUp', // Support URL
+        'details'    => 'https://open-time.net/?q=growUp',
+        'support'    => 'https://github.com/franck-paul/growUp',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/master/dcstore.xml',
     ]
 );
