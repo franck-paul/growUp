@@ -14,17 +14,13 @@ if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
 
-$new_version = DC_VERSION; // dcCore::app()->plugins->moduleInfo('growUp','version');
-$old_version = dcCore::app()->getVersion('growUp');
-
-if (version_compare((string) $old_version, $new_version, '>=')) {
+if (!dcCore::app()->newVersion(basename(__DIR__), dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'))) {
     return;
 }
 
 try {
     if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
         dcUpgrade::growUp(dcCore::app()->getVersion('core'));
-        dcCore::app()->setVersion('growUp', $new_version);
 
         return true;
     }
