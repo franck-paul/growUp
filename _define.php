@@ -10,15 +10,11 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-if (!defined('DC_RC_PATH')) {
-    return;
-}
-
 $this->registerModule(
     'growUp',
     'Force some upgrades',
     'Franck Paul',
-    '1.1',
+    '1.2',
     [
         'requires' => [['core', '2.24']],
         'type'     => 'plugin',

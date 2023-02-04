@@ -14,7 +14,7 @@ if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
 
-if (!dcCore::app()->newVersion(basename(__DIR__), dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'))) {
+if (version_compare((string) dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'), dcCore::app()->getVersion('core'), '>=')) {
     return;
 }
 
@@ -22,7 +22,10 @@ try {
     if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
         dcUpgrade::growUp(dcCore::app()->getVersion('core'));
 
-        return true;
+        // Register new version
+        dcCore::app()->setVersion(basename(__DIR__), dcCore::app()->getVersion('core'));
+
+        return false;   // In order to prevent module version storage
     }
 } catch (Exception $e) {
     dcCore::app()->error->add($e->getMessage());
