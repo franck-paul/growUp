@@ -14,7 +14,7 @@ if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
 
-if (version_compare((string) dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'), dcCore::app()->getVersion('core'), '>=')) {
+if (version_compare(dcCore::app()->getVersion(basename(__DIR__)), dcCore::app()->getVersion('core'), '>=')) {
     return;
 }
 
