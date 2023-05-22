@@ -14,9 +14,9 @@ $this->registerModule(
     'growUp',
     'Force some upgrades',
     'Franck Paul',
-    '1.2',
+    '2.0',
     [
-        'requires' => [['core', '2.24']],
+        'requires' => [['core', '2.26']],
         'type'     => 'plugin',
 
         'details'    => 'https://open-time.net/?q=growUp',
