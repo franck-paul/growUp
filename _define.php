@@ -14,7 +14,7 @@ $this->registerModule(
     'growUp',
     'Force some upgrades',
     'Franck Paul',
-    '2.0',
+    '2.0.1',
     [
         'requires' => [['core', '2.26']],
         'type'     => 'plugin',
