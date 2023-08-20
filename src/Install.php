@@ -15,29 +15,26 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\growUp;
 
 use dcCore;
-use dcNsProcess;
-use dcUpgrade;
+use Dotclear\Core\Process;
+use Dotclear\Core\Upgrade\Upgrade;
 use Exception;
 
-class Install extends dcNsProcess
+class Install extends Process
 {
-    protected static $init = false; /** @deprecated since 2.27 */
     public static function init(): bool
     {
-        static::$init = My::checkContext(My::INSTALL);
-
-        return static::$init;
+        return self::status(My::checkContext(My::INSTALL));
     }
 
     public static function process(): bool
     {
-        if (!static::$init) {
+        if (!self::status()) {
             return false;
         }
 
         try {
             if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
-                dcUpgrade::growUp(dcCore::app()->getVersion('core'));
+                Upgrade::growUp(dcCore::app()->getVersion('core'));
 
                 // Register new version
                 dcCore::app()->setVersion(My::id(), dcCore::app()->getVersion('core'));
