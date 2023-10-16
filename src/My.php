@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\growUp;
 
-use dcCore;
+use Dotclear\App;
 use Dotclear\Module\MyPlugin;
 
 /**
@@ -35,7 +35,7 @@ class My extends MyPlugin
             self::MANAGE,
             self::CONFIG,
             self::MENU,
-            self::WIDGETS => defined('DC_CONTEXT_ADMIN') && dcCore::app()->auth->isSuperAdmin(),   // Super-admin only
+            self::WIDGETS => defined('DC_CONTEXT_ADMIN') && App::auth()->isSuperAdmin(),   // Super-admin only
 
             default => null
         };
