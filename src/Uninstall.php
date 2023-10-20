@@ -27,7 +27,7 @@ class Uninstall extends Process
 
     public static function process(): bool
     {
-        if (!self::status() || !App::plugins()->moduleExists('Uninstaller')) {
+        if (!self::status()) {
             return false;
         }
 
@@ -40,7 +40,7 @@ class Uninstall extends Process
         // $var   = My::id(); // Var sub-folder
 
         // Database table name
-        // $table = dcCore::app()->prefix . 'growUp';
+        // $table = App::con()->prefix() . 'growUp';
 
         $user_actions = [
 

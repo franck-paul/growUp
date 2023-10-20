@@ -35,7 +35,7 @@ class My extends MyPlugin
             self::MANAGE,
             self::CONFIG,
             self::MENU,
-            self::WIDGETS => defined('DC_CONTEXT_ADMIN') && App::auth()->isSuperAdmin(),   // Super-admin only
+            self::WIDGETS => !App::task()->checkContext('FRONTEND') && App::auth()->isSuperAdmin(),   // Super-admin only
 
             default => null
         };
