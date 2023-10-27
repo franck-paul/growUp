@@ -41,8 +41,8 @@ class Install extends Process
 
                 return false;   // In order to prevent module version storage
             }
-        } catch (Exception $e) {
-            App::error()->add($e->getMessage());
+        } catch (Exception $exception) {
+            App::error()->add($exception->getMessage());
         }
 
         return true;
