@@ -33,14 +33,12 @@ class Install extends Process
         }
 
         try {
-            if (class_exists('dcUpgrade') && method_exists('dcUpgrade', 'growUp')) {
-                Upgrade::growUp(App::version()->getVersion('core'));
+            Upgrade::growUp(App::version()->getVersion('core'));
 
-                // Register new version
-                App::version()->setVersion(My::id(), App::version()->getVersion('core'));
+            // Register new version
+            App::version()->setVersion(My::id(), App::version()->getVersion('core'));
 
-                return false;   // In order to prevent module version storage
-            }
+            return false;   // In order to prevent module version storage
         } catch (Exception $exception) {
             App::error()->add($exception->getMessage());
         }
