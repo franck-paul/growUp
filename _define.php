@@ -21,6 +21,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=growUp',
         'support'    => 'https://github.com/franck-paul/growUp',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/main/dcstore.xml',
     ]
 );
