@@ -18,11 +18,12 @@ $this->registerModule(
     '4.3',
     [
         'date'     => '2003-08-13T13:42:00+0100',
-        'requires' => [['core', '2.28']],
+        'requires' => [['core', '2.36']],
         'type'     => 'plugin',
 
         'details'    => 'https://open-time.net/?q=growUp',
         'support'    => 'https://github.com/franck-paul/growUp',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/growUp/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );
