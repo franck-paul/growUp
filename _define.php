@@ -15,9 +15,9 @@ $this->registerModule(
     'growUp',
     'Force some upgrades',
     'Franck Paul',
-    '5.0',
+    '5.1',
     [
-        'date'     => '2025-09-07T16:01:00+0200',
+        'date'     => '2026-08-03T09:59:36+0200',
         'requires' => [['core', '2.36']],
         'type'     => 'plugin',
 
