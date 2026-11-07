@@ -18,9 +18,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'growUp',
         'Force some upgrades',
         'Franck Paul',
-        '5.1',
+        '5.2',
         [
-            'date'     => '2026-08-03T09:59:36+0200',
+            'date'     => '2026-11-07T16:54:43+0100',
             'requires' => [['core', '2.36']],
             'type'     => 'plugin',
 
